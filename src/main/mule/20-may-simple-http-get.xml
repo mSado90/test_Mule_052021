@@ -9,7 +9,13 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	</http:listener-config>
 	<flow name="20-may-simple-http-getFlow" doc:id="d27a16b6-36f8-4f12-89f4-e49ef3db5500" >
 		<http:listener doc:name="Listener" doc:id="373879f9-5a7b-4027-bbec-1f53d6830792" config-ref="HTTP_Listener_config" path="/testindocker"/>
-		<set-payload value='#[output application/json&#10;---&#10;{&#10;	sample_out: "String for test in docker",&#10;	value: 22233334.65&#10;}]' doc:name="Set Payload" doc:id="a9fe9947-bbda-416e-9b30-bf861138567f" />
+		<set-payload value='#[output application/json
+&#10;---
+&#10;{
+&#10;	sample_out: "String for test in docker",
+&#10;	value: 22233334.65
+&#10;}]' doc:name="Set Payload" doc:id="a9fe9947-bbda-416e-9b30-bf861138567f" />
 		<set-variable value="23" doc:name="age" doc:id="f8367a19-5559-4801-9802-2dd6e85e7a6d" variableName="age"/>
+		<set-variable value="Upalna 11, 53-023 Wrocław" doc:name="address" doc:id="f8367a19-5559-4801-9802-2dd6e85e7a6d" variableName="adress"/>
 	</flow>
 </mule>
