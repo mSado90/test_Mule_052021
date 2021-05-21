@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="7806f4df-7d0a-4dea-ae41-76be8afb11b3" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="20-may-simple-http-getFlow" doc:id="d27a16b6-36f8-4f12-89f4-e49ef3db5500" >
+		<http:listener doc:name="Listener" doc:id="373879f9-5a7b-4027-bbec-1f53d6830792" config-ref="HTTP_Listener_config" path="/testindocker"/>
+		<set-payload value='#[output application/json&#10;---&#10;{&#10;	sample_out: "String for test in docker",&#10;	value: 22233334.65&#10;}]' doc:name="Set Payload" doc:id="a9fe9947-bbda-416e-9b30-bf861138567f" />
+	</flow>
+</mule>
